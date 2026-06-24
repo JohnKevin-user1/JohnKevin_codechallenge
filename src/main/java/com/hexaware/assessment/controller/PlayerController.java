@@ -46,4 +46,9 @@ public class PlayerController {
 		service.deletePlayer(playerId);
 		
 	}
+	@GetMapping("/role/{role}")
+	public List<Player> getPlayersByRole(@PathVariable String role){
+		return service.getPlayersByRole(role);
+	}
+	
 }

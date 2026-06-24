@@ -1,6 +1,7 @@
 package com.hexaware.assessment.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 
 public class PlayerDTO {
@@ -12,6 +13,10 @@ public class PlayerDTO {
 	@Positive
 	private int jerseyNum;
 	@NotBlank
+	@Pattern(
+		    regexp = "^(Batsman|Bowler|Keeper|All Rounder)$",
+		    message = "Role must be Batsman, Bowler, Keeper or All Rounder"
+		)
 	private String role;
 	@Positive
 	private int totalMatches;

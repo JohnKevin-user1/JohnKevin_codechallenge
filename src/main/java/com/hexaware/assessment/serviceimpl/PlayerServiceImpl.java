@@ -86,4 +86,10 @@ public class PlayerServiceImpl implements IPlayerService{
 		
 	}
 
+	@Override
+	public List<Player> getPlayersByRole(String role) {
+		return repo.findByRole(role);
+		
+	}
+
 }
