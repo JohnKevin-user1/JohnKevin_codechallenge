@@ -17,6 +17,6 @@ public interface IPlayerService {
 	
 	void deletePlayer(int playerId);
 	
-	List<Player> getPlayersByRole(String role);
+	List<Player> getAllBatsman();
 	
 }
