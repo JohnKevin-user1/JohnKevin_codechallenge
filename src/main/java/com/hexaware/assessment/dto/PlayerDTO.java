@@ -13,10 +13,8 @@ public class PlayerDTO {
 	@Positive
 	private int jerseyNum;
 	@NotBlank
-	@Pattern(
-		    regexp = "^(Batsman|Bowler|Keeper|All Rounder)$",
-		    message = "Role must be Batsman, Bowler, Keeper or All Rounder"
-		)
+	@Pattern(regexp = "^(Batsman|Bowler|Keeper|All Rounder)$",
+		    message = "Role must be Batsman, Bowler, Keeper or All Rounder")
 	private String role;
 	@Positive
 	private int totalMatches;

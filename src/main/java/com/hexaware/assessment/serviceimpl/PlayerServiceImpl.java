@@ -60,11 +60,18 @@ public class PlayerServiceImpl implements IPlayerService{
 	}
 
 	@Override
+	public void deletePlayer(int playerId) {
+		repo.deleteById(playerId);
+		
+	}
+	@Override
 	public Player updatePlayer(int playerId, PlayerDTO dto) {
 		Player ply = repo.findById(playerId).orElse(null);
 		if(ply == null) {
 			return null;			
-		}
+		
+		}	
+		
 		ply.setPlayerId(dto.getPlayerId());
 		ply.setPlayerName(dto.getPlayerName());
 		ply.setJerseyNum(dto.getJerseyNum());
@@ -77,21 +84,29 @@ public class PlayerServiceImpl implements IPlayerService{
 		
 		return repo.save(ply);
 		
-		
 	}
 
-	@Override
-	public void deletePlayer(int playerId) {
-		repo.deleteById(playerId);
-		
-	}
+
 
 	@Override
 	public List<Player> getAllBatsman() {
 		
 		return repo.getAllBatsman();
 	}
-
 	
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
